@@ -51,49 +51,30 @@ footer{background:#050505;color:#fff;padding:65px 7.5% 25px;display:grid;grid-te
 .footer-links a{font-size:8px}
 footer p{font-size:7px;text-align:right;letter-spacing:1px;margin:0}
 @media(max-width:900px){.navigation{padding:0 24px}.nav-left{gap:12px}.nav-left a:nth-child(n+3),.nav-right>a:nth-child(-n+2){display:none}.navigation nav a{font-size:8px}.editorial{padding-left:5%;padding-right:5%;column-gap:5%;row-gap:80px}.editorial-image{min-height:470px}.editorial-copy{padding:20px 3%}}
+
 @media screen and (max-width: 620px) {
 
   .editorial {
     display: grid !important;
     grid-template-columns: 1fr !important;
-    grid-template-rows: auto auto auto auto auto auto auto auto;
+    grid-auto-flow: row;
     gap: 0 !important;
     padding: 0 22px 80px !important;
   }
 
-  /* POSIÇÃO DE CADA ELEMENTO */
+  /* ORDEM CORRIGIDA */
 
-  .editorial > :nth-child(1) {
-    grid-row: 1;
-  }
+  .editorial > :nth-child(1) { grid-row: 1; }
+  .editorial > :nth-child(2) { grid-row: 2; }
+  .editorial > :nth-child(3) { grid-row: 3; }
+  .editorial > :nth-child(4) { grid-row: 4; }
 
-  .editorial > :nth-child(2) {
-    grid-row: 2;
-  }
+  /* MEU PROBLEMA vem antes da sua foto */
+  .editorial > :nth-child(6) { grid-row: 5; }
+  .editorial > :nth-child(5) { grid-row: 6; }
 
-  .editorial > :nth-child(3) {
-    grid-row: 3;
-  }
-
-  .editorial > :nth-child(4) {
-    grid-row: 4;
-  }
-
-  .editorial > :nth-child(5) {
-    grid-row: 5;
-  }
-
-  .editorial > :nth-child(6) {
-    grid-row: 6;
-  }
-
-  .editorial > :nth-child(7) {
-    grid-row: 7;
-  }
-
-  .editorial > :nth-child(8) {
-    grid-row: 8;
-  }
+  .editorial > :nth-child(7) { grid-row: 7; }
+  .editorial > :nth-child(8) { grid-row: 8; }
 
   /* IMAGENS */
 
@@ -106,6 +87,7 @@ footer p{font-size:7px;text-align:right;letter-spacing:1px;margin:0}
   }
 
   .editorial-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -116,13 +98,9 @@ footer p{font-size:7px;text-align:right;letter-spacing:1px;margin:0}
   .editorial-copy {
     width: 100%;
     max-width: none;
-    padding: 55px 8px;
+    padding: 50px 8px;
     margin: 0;
-  }
-
-  .editorial-copy.second-copy {
     justify-self: stretch;
-    padding: 55px 8px;
   }
 
   .editorial h2 {
