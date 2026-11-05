@@ -58,32 +58,24 @@ footer p{font-size:7px;text-align:right;letter-spacing:1px;margin:0}
   .editorial {
     display: flex !important;
     flex-direction: column !important;
-    padding: 0 22px 80px !important;
     gap: 0 !important;
+    padding: 0 22px 80px !important;
   }
 
-  /* Ordem dos elementos */
+  .editorial > :nth-child(1) { order: 1; }
+  .editorial > :nth-child(2) { order: 2; }
+  .editorial > :nth-child(3) { order: 3; }
+  .editorial > :nth-child(4) { order: 4; }
+  .editorial > :nth-child(6) { order: 5; }
+  .editorial > :nth-child(5) { order: 6; }
+  .editorial > :nth-child(7) { order: 7; }
+  .editorial > :nth-child(8) { order: 8; }
 
-  .editorial > :nth-child(1) { order: 1 !important; }
-  .editorial > :nth-child(2) { order: 2 !important; }
-  .editorial > :nth-child(3) { order: 3 !important; }
-  .editorial > :nth-child(4) { order: 4 !important; }
-
-  /* Inverte foto e texto de Meu problema */
-  .editorial > :nth-child(6) { order: 5 !important; }
-  .editorial > :nth-child(5) { order: 6 !important; }
-
-  .editorial > :nth-child(7) { order: 7 !important; }
-  .editorial > :nth-child(8) { order: 8 !important; }
-
-  /* Imagens */
   .editorial-image {
-    display: block !important;
-    width: 100% !important;
-    height: 115vw !important;
-    min-height: 0 !important;
-    max-height: 600px !important;
-    margin: 0 !important;
+    width: 100%;
+    height: 115vw;
+    min-height: 0;
+    max-height: 600px;
   }
 
   .editorial-image img {
@@ -93,13 +85,11 @@ footer p{font-size:7px;text-align:right;letter-spacing:1px;margin:0}
     object-fit: cover;
   }
 
-  /* Textos */
   .editorial-copy {
-    display: block !important;
-    width: 100% !important;
-    max-width: none !important;
+    width: 100%;
+    max-width: none;
     padding: 50px 8px !important;
-    margin: 0 !important;
+    margin: 0;
   }
 
   .editorial h2 {
@@ -107,3 +97,5 @@ footer p{font-size:7px;text-align:right;letter-spacing:1px;margin:0}
   }
 
 }
+
+
